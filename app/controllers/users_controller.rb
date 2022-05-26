@@ -15,4 +15,19 @@ class UsersController < ApplicationController
 
     render({ :template => "user_templates/show.html.erb" })
   end
+
+  def add_user
+    input_name = params.fetch("input_username")
+
+    a_new_user = User.new
+
+    a_new_user.username = input_name
+
+    highest_id = User.all.maximum(:id)
+    a_new_user.id = highest_id + 1
+
+    a_new_user.save
+
+    redirect_to("/users")
+  end
 end
