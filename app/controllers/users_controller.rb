@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def show
     url_username = params.fetch("path_username")
 
-    matching_username = User.where(:username => url_username)
+    matching_username = User.where({:username => url_username})
 
     @the_user = matching_username.at(0)
 

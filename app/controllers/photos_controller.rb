@@ -8,7 +8,7 @@ class PhotosController < ApplicationController
   def show
     url_photo = params.fetch("photo_name")
 
-    matching_photo = User.where(:username => url_photo)
+    matching_photo = Photo.where({:id => url_photo})
 
     @the_photo = matching_photo.at(0)
 
