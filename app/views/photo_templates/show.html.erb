@@ -36,7 +36,7 @@
 
   <dt>Delete photo</dt>
   <dd>
-    <a href="/delete_photo/777;">
+    <a href="/delete_photo/<%=@the_photo.id%>;">
       Delete this photo
     </a>
   </dd>
@@ -65,5 +65,4 @@
       <%= a_comment.created_at%>
     </td>
   </tr>
-
 <% end %>
